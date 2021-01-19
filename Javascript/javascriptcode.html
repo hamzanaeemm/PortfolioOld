@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html>
+	<head>
+		<style type="text/css">
+			.circ{
+				
+				border-radius:50%;
+				height:100px;
+				width:100px;
+				margin:30px 30px 30px 30px;
+				float:left
+			}
+			
+			#redcirc{
+			
+			background-color:red;
+
+			}
+			#greencirc{
+			
+				background-color:green;
+			
+			}
+			#yellowcirc{
+			
+				background-color:yellow;
+			
+			}
+			
+			.chngtxt{
+			
+				margin-top:200px;
+				
+			}
+		</style>
+	
+	</head>
+	
+	<body>
+		
+		<p id="abc">hello world</p>\
+		<button id="mybtn">Change text</button>
+		
+		<p id="2para">Javascript is...</p>
+		<button id="mybtn2">Append text</button>
+		
+		<p id="3para"></p>
+		<button id="mybtn3">Add text</button>
+		
+		<p id="4para">This is some more Js test text</p>
+		<button id="mybtn4">Style text</button>
+		<br>
+		<div class="circ" id="redcirc"> </div>
+		<div class="circ" id="greencirc"> </div>
+		<div class="circ" id="yellowcirc"> </div>
+		<div class="chngtxt">
+		<input id="inp1"></input>
+		<p id="5para">This is some chnageabl text. Type in the box above to change it.</p>
+		<button id="mybtn5">Change</button>
+		</div>
+		<br>
+		<input id="inp2"></input>
+		<button id="mybtn6">Guess The Word o_a_a</button>
+		<br>
+		<input id="inp3"></input>
+		<button id="mybtn7">Guess</button>
+		<br>
+		<div id="div1"></div>
+		
+		<div id="div2"></div>
+		<script type="text/javascript">
+		
+		
+			document.getElementById("mybtn").onclick = function() {
+				
+				document.getElementById("abc").innerHTML="Hello Hamza";
+				
+			}
+			
+			document.getElementById("mybtn2").onclick = function() {
+				
+				document.getElementById("2para").innerHTML = "I think " + document.getElementById("2para").innerHTML + "Amazing";
+				
+			}
+			
+			document.getElementById("mybtn3").onclick = function() {
+				
+				document.getElementById("3para").innerHTML = "<h1>I think You are Amazing</h1>";
+				
+			}
+			
+			document.getElementById("mybtn4").onclick = function() {
+				
+				document.getElementById("4para").style.color= "red";
+				
+			}
+			
+			document.getElementById("redcirc").onclick = function() {
+				
+				document.getElementById("redcirc").style.display= "none";
+				
+			}
+			
+			document.getElementById("mybtn5").onclick = function() {
+				
+				var textentered=""
+				textentered = document.getElementById("inp1").value
+				document.getElementById("5para").innerHTML = textentered
+				
+				}
+				
+				
+				var myArray =new Array();
+				myArray[0] = "hamza"
+				myArray[1] = "osama"
+				myArray[2] = "mnahil"		
+				console.log(myArray)
+				
+				
+				
+				var array = ["abc" , "xyz", "lmn"];
+				array.push("pqr")
+				array.splice(1,1,"stu")
+				console.log(array)
+			
+			
+				var x
+				document.getElementById("mybtn6").onclick = function() {
+					
+					var magicword="osama";
+					var wordEntered= document.getElementById("inp2").value;
+					if(wordEntered==magicword){
+					alert('you are correct')
+					}
+					else {
+					alert('you are wrong')
+					}
+			}
+
+					document.getElementById("mybtn7").onclick = function() {
+					
+					var num=Math.floor(Math.random() *10)
+					var guess= document.getElementById("inp3").value;
+					var gap=guess-num;
+					if(guess==num){
+					alert('Hurray! you are correct. The number was ' + num )
+					}
+					
+					else if(gap> num+2){
+					alert('You Guessed too high . The number was ' + num )
+					
+					}
+					
+					else if(gap< num-2){
+					alert('You Guessed too low . The number was ' + num )
+					
+					}
+					else {
+					alert('OOPS! you are wrong. the number was ' + num + ' Try again later')
+					}
+			}
+				var nstr = "";
+				var array = ["hamza", "osama", "minahil"]
+				for (i=0; i<array.length; i++){
+				//nstr=nstr + "<p>" + array[i]+"</p>"
+				nstr=nstr +"<br>"+array[i];
+				
+				}
+				document.getElementById("div1").innerHTML=nstr;
+				
+				
+				var newstr="";
+				var i =0;
+				while (i<array.length){
+					newstr=newstr+ "<br>" +array[i];
+					i++;
+				}
+				
+				document.getElementById("div2").innerHTML=newstr;
+				
+		</script>
+		
+	</body>
+</html>
